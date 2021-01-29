@@ -2,9 +2,7 @@
 ;;; disassembled from Tom Thumb
 ;;; July 2018 by ops
 
-        .setcpu "6502"
-        .segment "CODE"
-
+        .include "vic20.inc"
         .export anirog_load
 
 anirog_load:
@@ -25,9 +23,16 @@ L0351:  jsr     L03AF
 
 L036E:  jsr     L03D8
         sta     ($C1),y
+        lda     VIC_COLOR
+        eor     #$04
+        sta     VIC_COLOR
         inc     $C1
         bne     L0379
         inc     $C2
+        lda     $C2
+        and     #%00000011
+        eor     VIC_COLOR
+        sta     VIC_COLOR
 L0379:  lda     $C1
         cmp     $2D
         lda     $C2
