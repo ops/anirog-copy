@@ -5,3 +5,5 @@ Tested with:
 - Jump Jet
 - Minipedes
 - Tom Thumb
+- Space Pirate
+- Star Defender
