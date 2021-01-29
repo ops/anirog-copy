@@ -16,7 +16,7 @@ LDFLAGS := -C c64-asm.cfg
 OBJECTS := main.o anirog-load.o
 
 $(PROGRAM): $(OBJECTS)
-	$(LD) $(LDFLAGS) -o $@ -S 828 $(OBJECTS)
+	$(LD) $(LDFLAGS) -o $@ -S 820 $(OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS)
